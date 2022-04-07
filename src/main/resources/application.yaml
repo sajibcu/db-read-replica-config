@@ -1,0 +1,29 @@
+# JPA
+spring:
+  jpa:
+    show-sql: true
+
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+        jdbc:
+          batch_size: 10
+          order_inserts: true
+          order_updates: true
+    open-in-view: false
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/db_read_write
+    username: db_read_write
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+
+  datasource-read:
+    url: jdbc:postgresql://localhost:5434/db_read
+    username: db_read
+    password: 12345
+    driver-class-name: org.postgresql.Driver
